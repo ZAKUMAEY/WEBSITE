@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Ulang Tahun Irma Agustina 🎂</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3, #a18cd1);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 90%;
+      max-width: 700px;
+      padding: 45px 30px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.25);
+      animation: muncul 1.2s ease;
+    }
+
+    .emoji {
+      font-size: 75px;
+      animation: bounce 2s infinite;
+    }
+
+    h1 {
+      margin-top: 15px;
+      font-size: clamp(35px, 7vw, 65px);
+      text-shadow: 0 5px 15px rgba(0,0,0,.2);
+    }
+
+    .nama {
+      color: #fff5a8;
+    }
+
+    .subtitle {
+      margin-top: 15px;
+      font-size: 20px;
+      line-height: 1.7;
+    }
+
+    .message {
+      margin: 25px auto;
+      max-width: 570px;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    button {
+      border: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      background: white;
+      color: #ff4f81;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,.2);
+      transition: .3s;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 12px 30px rgba(0,0,0,.3);
+    }
+
+    #surprise {
+      display: none;
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.15);
+      animation: muncul .8s ease;
+    }
+
+    #surprise h2 {
+      margin-bottom: 10px;
+      color: #fff5a8;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -50px;
+      font-size: 25px;
+      animation: terbang linear forwards;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      top: -20px;
+      animation: jatuh linear forwards;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    @keyframes muncul {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes terbang {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-110vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes jatuh {
+      0% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 35px 20px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+
+      .message {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="emoji">🎂</div>
+
+    <h1>
+      Happy Birthday<br>
+      <span class="nama">Irma Agustina</span>! 💖
+    </h1>
+
+    <p class="subtitle">
+      Hari ini adalah hari spesial untuk seseorang yang istimewa ✨
+    </p>
+
+    <div class="message">
+      <p>
+        Selamat ulang tahun, Irma! 🥳🎉
+      </p>
+
+      <p>
+        Semoga di usia yang baru ini, semua impian dan harapanmu
+        perlahan menjadi kenyataan. Semoga selalu diberikan
+        kebahagiaan, kesehatan, kesuksesan, dan banyak alasan
+        untuk tersenyum setiap hari. 💐
+      </p>
+
+      <p>
+        Tetap menjadi Irma yang hebat, ceria, dan selalu membawa
+        kebahagiaan untuk orang-orang di sekitarmu. ❤️
+      </p>
+    </div>
+
+    <button onclick="kejutan()">
+      🎁 Klik untuk Kejutan
+    </button>
+
+    <div id="surprise">
+      <h2>✨ Surprise! ✨</h2>
+      <p>
+        Semoga tahun ini menjadi salah satu tahun terbaik
+        dalam hidupmu. Jangan pernah berhenti bermimpi,
+        karena masih banyak hal indah yang menantimu! 🌈
+      </p>
+      <p style="margin-top:10px;">
+        Sekali lagi, <b>Selamat Ulang Tahun Irma Agustina! 💕</b>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function buatHati() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+
+      const emojis = ["❤️", "💖", "💕", "💗", "💓", "💝"];
+      heart.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (4 + Math.random() * 5) + "s";
+      heart.style.fontSize = (18 + Math.random() * 25) + "px";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 9000);
+    }
+
+    setInterval(buatHati, 500);
+
+    function kejutan() {
+      document.getElementById("surprise").style.display = "block";
+
+      for (let i = 0; i < 100; i++) {
+        setTimeout(() => {
+          buatConfetti();
+        }, i * 15);
+      }
+    }
+
+    function buatConfetti() {
+      const confetti = document.createElement("div");
+      confetti.className = "confetti";
+
+      const colors = [
+        "#ff4f81",
+        "#fff176",
+        "#64b5f6",
+        "#81c784",
+        "#ba68c8",
+        "#ffb74d"
+      ];
+
+      confetti.style.background =
+        colors[Math.floor(Math.random() * colors.length)];
+
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.animationDuration =
+        (2 + Math.random() * 3) + "s";
+
+      confetti.style.transform =
+        `rotate(${Math.random() * 360}deg)`;
+
+      document.body.appendChild(confetti);
+
+      setTimeout(() => {
+        confetti.remove();
+      }, 5000);
+    }
+  </script>
+
+</body>
+</html>
