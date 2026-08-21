@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uji Kelayakan Teman 🤪</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: linear-gradient(135deg, #1d1b26, #0f0e17);
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #ffffff;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 2px dashed #ff5e62;
+            padding: 40px 20px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .emoji {
+            font-size: 4.5rem;
+            margin-bottom: 15px;
+            animation: shake 0.5s infinite alternate;
+        }
+        @keyframes shake {
+            0% { transform: rotate(-5deg); }
+            100% { transform: rotate(5deg); }
+        }
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #ff5e62;
+        }
+        p {
+            font-size: 1.1rem;
+            color: #d1d1e9;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            height: 60px;
+        }
+        .btn {
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        #btn-yes {
+            background-color: #2ed573;
+            color: white;
+        }
+        #btn-no {
+            background-color: #ff4757;
+            color: white;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="emoji">🐒</div>
+        <h1>Pertanyaan Jujur!</h1>
+        <p id="question">Apakah kamu beneran mirip monyet lepas kalau lagi lapar?</p>
+        
+        <div class="btn-container">
+            <button class="btn" id="btn-yes" onclick="admitDefeat()">IYA</button>
+            <button class="btn" id="btn-no" onmouseover="moveButton()">ENGGAK</button>
+        </div>
+    </div>
+
+    <script>
+        // Efek Tombol "ENGGAK" kabur saat mau diklik
+        function moveButton() {
+            const btnNo = document.getElementById('btn-no');
+            
+            // Menghitung posisi acak di dalam layar agar tidak keluar batas
+            const x = Math.random() * (window.innerWidth - btnNo.offsetWidth - 40) - (window.innerWidth / 2 - 100);
+            const y = Math.random() * (window.innerHeight - btnNo.offsetHeight - 40) - (window.innerHeight / 2 - 100);
+            
+            // Memindahkan tombol ke koordinat baru secara acak
+            btnNo.style.left = `${x}px`;
+            btnNo.style.top = `${y}px`;
+        }
+
+        // Kejutan ketika terpaksa klik "IYA"
+        function admitDefeat() {
+            const card = document.querySelector('.card');
+            card.innerHTML = `
+                <div class="emoji">🤣</div>
+                <h1>WKWKWK NGAKU!</h1>
+                <p>Akhirnya ada pengakuan jujur secara digital. Tolong screenshot ini dan kirim ke grup sekarang! 🤫</p>
+                <button class="btn" id="btn-yes" onclick="location.reload()">Ulangi Ujian</button>
+            `;
+        }
+    </script>
+</body>
+</html>
